@@ -6,3 +6,4 @@ f:{[x;y]
     $[l[i] in 1 2;(@[l;l i+3;:;af l l i+1 2];i+4);(l;i+1)]
     };
 (first/)(@[inp;1 2;:;12 2];0) f/til count inp
+last[r]+100*first r:first n where 19690720={(first/)(@[inp;1 2;:;x];0) f/til count inp}each n:n cross n:til 100
