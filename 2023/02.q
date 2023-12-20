@@ -8,5 +8,3 @@ f:{
  };
 sum 1+where all each threshold>=/:f each inp
 sum prd each f each inp
-
-
