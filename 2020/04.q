@@ -7,7 +7,7 @@ f:{[t]
  t:select from t where byr within 1920 2010,iyr within 2010 2020,eyr within 2020 2030;
  t:select from t where unit in `in`cm,?[unit=`cm;hgt within 150 193;hgt within 59 76];
  t:select from t where 9=count each pid, all each pid within "09";
- t:select from t where 7=count each hcl, hcl like\: "#*",{all|[x like"#*";all (1_x) within/:("09";"af")]}'[hcl];
+ t:select from t where hcl like("#",raze 6#enlist"[0-9a-f]");
  t:select from t where ecl in `amb`blu`brn`gry`grn`hzl`oth;
  :count t
  };
