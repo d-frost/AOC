@@ -1,7 +1,7 @@
 inp:"J"$read0`:2017/input/05.txt;
 p1:{
- idx:x[0]; maze:x[1]; step:x[2];
+ idx:x[0]; step:x[1]; maze:x[2];
  if[null maze[idx];:x];
- (idx+maze[idx];@[maze;idx;1+];step+1)
+ (idx+maze[idx];step+1;@[maze;idx;1+])
  };
-last p1/[(0;inp;0)]
+p1/[(0;0;inp)][1]
