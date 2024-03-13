@@ -1,4 +1,4 @@
 inp:read0`:2021/input/05.txt;
-n:n where any each (=).' n:"J"$" "vs''"-"vs'ssr/[;(" -> ";",");("-";" ")]each inp;
-p1:{s:any -1=signum r:last deltas a:(x;y);(cross/)reverse $[s;a[0]-;a[0]+]til each 1+abs r};
-count where 2<=count each group raze p1 .' n
+n1:n2 where any each (=).' n2:"J"$" "vs''"-"vs'ssr/[;(" -> ";",");("-";" ")]each inp;
+p1:{flip(1+max abs r)#'a[0]+signum[r]*til each 1+abs r:last deltas a:(x;y)};
+{count where 2<=count each group raze p1 .' x}each (n1;n2)
