@@ -5,5 +5,5 @@ f1:{
     l:first/[1_p];
     g[l] in n
  };
-f2:{1=count where first/[1_p]=@[last p;-1+"J"$"-"vs first p:" "vs x]};
-(count where ::) each (f1;f2)@/:\:inp
+f2:{1=sum first/[1_p]=@[last p;-1+"J"$"-"vs first p:" "vs x]};
+(sum ::) each (f1;f2)@/:\:inp
