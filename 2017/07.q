@@ -8,6 +8,7 @@ p1:{
  (d;first value[d]except key d)
  };
 p1[inp][1]
+
 r:p1[inp][0]
 d:1!flip`n`p`w!()$/:"SSJ";
 `d upsert flip (key[n];r[key n];value n);
@@ -15,13 +16,11 @@ update t:0 from `d;
 fr:{[nodes]
  {update t:w+sum exec t from d where p=x from `d where n=x} each nodes;
  .z.s each distinct exec p from d where n in nodes;
- }each key[r]except value r;
-fr each b;
+ };
+fr each key[r]except value r;
 p2:{
- problemParent:exec first p from `t xasc select from d where p in where 1<>exec count distinct t by p from `t xasc d;
- expectedTotalWeight:exec first t from select from d where p=problemParent,1<>(count;i) fby t;
- actualTotalWeight:exec first t from select from d where p=problemParent,1=(count;i) fby t;
- update w:w+1_deltas(actualTotalWeight;expectedTotalWeight) from `d where t=actualTotalWeight;
- exec first w from d where p=problemParent,1=(count;i) fby t
+ pn:0!1#`t xasc select from d where 1=(count;i) fby ([]p;t);
+ pns:0!select from d where p in pn[`p];
+ (exec first w from pn)+(exec first t from pns except pn)-pn[`t][0]
  };
 p2[]
