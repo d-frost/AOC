@@ -10,9 +10,8 @@ p1:{
 p1[inp][1]
 
 r:p1[inp][0]
-d:1!flip`n`p`w!()$/:"SSJ";
-`d upsert flip (key[n];r[key n];value n);
-update t:0 from `d;
+d:1!flip`n`p`w`t!()$/:"SSJJ";
+`d upsert flip (key[n];r[key n];value n;0);
 fr:{[nodes]
  {update t:w+sum exec t from d where p=x from `d where n=x} each nodes;
  .z.s each distinct exec p from d where n in nodes;
