@@ -40,8 +40,8 @@ p2:{[s]
  `ticker upsert (s;();@[;`done]ticker last(0!ticker)[`second];0N;());
  if[count aw:(value w)except`;finishWork[s;]each aw];
  if[count fw:where w=`;startWork[s;] each fw];
- ticker[s;`workers]:count(value w)except`;
- ticker[s;`busy]:(value w)except`;
+ ticker[s;`workers]:count b:(value w)except`;
+ ticker[s;`busy]:b;
  if[(~). asc each (ticker[s;`done];exec node from dp2);:s];
  s+1
  }
