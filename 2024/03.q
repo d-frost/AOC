@@ -1,6 +1,6 @@
 inp:read0`:2024/input/03.txt;
 d:raze inp;
-fp:{[p;d]+\:[;s]where p~/:(s:count p)#'((1_)\)d};
+fp:{+\:[;s]where x~/:(s:count x)#'((1_)\)y};
 gp:{first each ")"vs'x cut y};
 gs:{sum value each ssr'[;csv;"*"]x where all each x in .Q.n,csv};
 sd:`s#(!). flip enlist[(0,1b)],asc raze(fp[;d]@/:("do()";"don't()")),\:'10b;
