@@ -4,4 +4,4 @@ sort:{[dm;b]
  if[(null b)or 0>(-).(i:last where dm=b;ni:(null dm)?1b);:dm];
  @/[dm;(ni;i);:;(b;0N)]
  }
-sum r*'til count r:(r where not null::) r:r sort/ reverse r:gb[inp]
+sum r*'til count r:r where not null r:r sort/ reverse r:gb[inp]
