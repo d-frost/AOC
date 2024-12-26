@@ -1,14 +1,13 @@
 inp:read0`:2024/input/10.txt;
 d:value each' inp;
-idx:raze(til count d),/:'where each 0=/:d;
+idx:raze(til count d),/:'where each 0=d;
 m:(1 0;0 1;-1 0;0 -1);
-nf:{[track;idx]
- if[track;i,:enlist idx];
- if[9=node:d . idx;:1b];
+nf:{[idx]
+ if[9=node:d . idx;:enlist idx];
  newNode:d ./:pos:idx+/:m;
  targetNode:1+node;
  idx:pos where newNode=targetNode;
- raze .z.s[track] each idx except ?[track;i;()]
+ raze .z.s each idx
  };
-wf:{[track;idx]i::();nf[track;idx]};
-sum each sum each' {wf[x;] each idx}each 10b
+sum(count distinct::)each nf each idx
+sum count each nf each idx
