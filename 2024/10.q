@@ -8,7 +8,7 @@ nf:{[track;idx]
  newNode:d ./:pos:idx+/:m;
  targetNode:1+node;
  idx:pos where newNode=targetNode;
- .z.s[track] each idx except ?[track;i;()]
+ raze .z.s[track] each idx except ?[track;i;()]
  };
 wf:{[track;idx]i::();nf[track;idx]};
-sum each sum each' (raze/''){wf[x;] each idx}each 10b
+sum each sum each' {wf[x;] each idx}each 10b
