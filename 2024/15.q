@@ -21,10 +21,10 @@ f:{[g;d]
  // get indices of updates points
  n:count[gl]#n where 2=count each n:(til count g),'gi;
  // recreate g based on new line
- g:g {.[x;y[0];:;y[1]]}/ flip (n;gl);
+ g:.[;;:;]/[g;n;gl];
  // flip back to correct orientation
  g:(3 {flip reverse x}\ g)[r];
  // return new g
  g
  };
-sum sum each raze (100*til count b),''where each "O"=b:g f/ d
+sum sum each raze (100*til count g),''where each "O"=g f/ d
