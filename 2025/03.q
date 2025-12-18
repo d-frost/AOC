@@ -4,12 +4,10 @@ f1:{
  $[(<). 10 sv' (x;(max x;y));(max x;y);x]]};
 sum {10 sv f1 over x} each i
 
-f2:{nn:x idx:last where (>) prior maxs (-11+count n)_x;(idx;nn)}
+f2:{nn:y idx:last where (>) prior maxs (1+count[x]+neg z)_y;(idx;nn)};
 wf:{
- r:f2 x;
- n,:r 1;
- if[12=count n;:()];
- (1+r 0)_ x
- }
-result:();{n::();wf over x;result,:10 sv n}each i;
-sum result
+ if[y=count x 0;:x];
+ r:f2[;;y] . x;
+ (x[0],r 1;(1+r 0)_ x 1)
+ };
+{sum 10 sv' ({wf[;x]/[(();y)]}[x;]each y)[;0]}[;i] each 2 12
